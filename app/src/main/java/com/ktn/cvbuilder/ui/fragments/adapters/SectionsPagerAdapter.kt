@@ -1,4 +1,4 @@
-package com.ktn.cvbuilder.ui
+package com.ktn.cvbuilder.ui.fragments.adapters
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -9,10 +9,11 @@ import javax.inject.Inject
 
 
 class SectionsPagerAdapter @Inject constructor(
-    private val context: Context
+    private val context: Context,
+    val fragmentList:List<HolderFragment.FragmentInfo>
 ) : FragmentStateAdapter((context as AppCompatActivity).supportFragmentManager,context.lifecycle) {
 
-    private val fragments = HolderFragment.fragmentList().map { it.fragment }
+    val fragments = fragmentList.map { it.fragment }
 
     override fun getItemCount(): Int {
       return  fragments.size

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.ktn.cvbuilder.R
-import com.ktn.cvbuilder.ui.CvViewModel
+import com.ktn.cvbuilder.ui.cvViewModel.CvViewModel
 import javax.inject.Inject
 
 class HomeFragment:Fragment(R.layout.fragment_home) {

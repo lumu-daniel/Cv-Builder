@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.CvBuilder" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/secondary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -21,6 +21,25 @@
     <style name="Theme.CvBuilder.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="roundedImageView" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">62dp</item>
+        <item name="cornerSize">87dp</item>
+    </style>
+    <style name="roundedIcnView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">28dp</item>
+    </style>
+    <style name="custom_outline" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxCornerRadiusBottomEnd">32dp</item>
+        <item name="boxCornerRadiusBottomStart">32dp</item>
+        <item name="boxCornerRadiusTopEnd">32dp</item>
+        <item name="boxCornerRadiusTopStart">32dp</item>
+    </style>
+
+    <style name="FacebookLoginButton">
+        <item name="android:textSize">20dp</item>
+        <item name="android:background">@drawable/facebook_icn</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
     </style>
 </resources>

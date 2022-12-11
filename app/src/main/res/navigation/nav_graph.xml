@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/nav_graph">
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph" app:startDestination="@id/holderFragment">
 
+    <fragment android:id="@+id/holderFragment"
+              android:name="com.ktn.cvbuilder.ui.fragments.HolderFragment"
+              tools:layout="@layout/fragment_holder"
+              android:label="HolderFragment"/>
+    <fragment android:id="@+id/loginFragment" android:name="com.ktn.cvbuilder.ui.fragments.LoginFragment"
+              android:label="LoginFragment"
+              tools:layout="@layout/fragment_login">
+        <action android:id="@+id/action_loginFragment_to_holderFragment" app:destination="@id/holderFragment"/>
+    </fragment>
 </navigation>

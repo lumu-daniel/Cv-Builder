@@ -6,17 +6,12 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 import com.ktn.cvbuilder.R
-import com.ktn.cvbuilder.ui.CvViewModel
-import com.ktn.cvbuilder.ui.SectionsPagerAdapter
-import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
+import com.ktn.cvbuilder.ui.fragments.adapters.SectionsPagerAdapter
+import kotlinx.android.synthetic.main.fragment_holder.*
 
-class HolderFragment : Fragment(R.layout.fragment_holder) {
-
-    @Inject
-    lateinit var sectionsPagerAdapter: SectionsPagerAdapter
-
-    private lateinit var cvViewModel: CvViewModel
+class HolderFragment constructor(
+    private val sectionsPagerAdapter: SectionsPagerAdapter
+    ) : Fragment(R.layout.fragment_holder) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,22 +20,13 @@ class HolderFragment : Fragment(R.layout.fragment_holder) {
         }
         tabs.apply {
             TabLayoutMediator(tabs, view_pager) { tab, position ->
-                tab.text = fragmentList()[position].fragmentTitle
+                tab.text = sectionsPagerAdapter.fragmentList[position].fragmentTitle
             }.attach()
         }
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-    }
-
-    companion object{
-        fun fragmentList()= listOf<FragmentInfo>(
-            FragmentInfo("Home",HomeFragment()),
-            FragmentInfo("About Me",AboutMeFragment()),
-            FragmentInfo("Work",WorkFragment()),
-            FragmentInfo("Contact",ContactFragment())
-        )
     }
 
     data class FragmentInfo(

@@ -2,4 +2,24 @@
     <string name="app_name">Cv Builder</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="career_note">Career Note</string>
+    <string name="career_note_text"><b>Lorem</b> Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="work_experience">Work Experience</string>
+    <string name="work_experience_text"><b>Languages:</b> Java, JavaScript, PL/SQL\n<b>Frameworks/Web:</b> Spring(Boot,MVC,Security), Hibernate, JDBC\n<b>MicroServices/Cloud:</b> AWS,GCP,Docker,Kubernetes,Kafka\n<b>Databases:</b> Oracle PL/SQL,MySQL,MongoDB\n<b>Tools:</b> Intellij IDEA,Maven,Github,Gitlab,UML</string>
+    <string name="phone_sample">+1(641)164-5544</string>
+    <string name="my_contacts">My Contacts</string>
+    <string name="about_me">About Me</string>
+    <string name="education">Education</string>
+    <string name="certifications">Certifications</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+
+    <string name="facebook_app_id">1123087141738462</string>
+    <string name="fb_login_protocol_scheme">fb1123087141738462</string>
+    <string name="facebook_client_token">628d5c067c9b1558ca6497534f39edaa</string>
+
+    <string name="or_login_with">Or Login With…</string>
+
+
 </resources>
