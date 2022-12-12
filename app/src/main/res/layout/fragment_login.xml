@@ -27,6 +27,7 @@
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameTI"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:hint="@string/username"
@@ -65,6 +66,28 @@
             android:text="@string/forgot_password"
             android:layout_marginTop="15dp"
             android:textAlignment="textEnd"
+            android:textColor="@color/primary"/>
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginBtn"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:paddingVertical="10dp"
+            android:textSize="18dp"
+            app:cornerRadius="20dp"
+            android:text="@string/login"
+    />
+
+
+    <TextView
+            android:id="@+id/createAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_account"
+            android:clickable="true"
+            android:layout_marginTop="15dp"
+            android:textAlignment="textStart"
             android:textColor="@color/primary"/>
     <TextView
             android:layout_width="match_parent"

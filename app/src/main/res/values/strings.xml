@@ -20,6 +20,9 @@
     <string name="facebook_client_token">628d5c067c9b1558ca6497534f39edaa</string>
 
     <string name="or_login_with">Or Login With…</string>
+    <string name="login">Login</string>
+    <string name="create_account">Create Account</string>
+    <string name="signup">SignUp</string>
 
 
 </resources>

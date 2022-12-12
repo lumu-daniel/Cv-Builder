@@ -3,9 +3,10 @@ package com.ktn.cvbuilder.ui.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.google.android.material.snackbar.Snackbar
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayoutMediator
 import com.ktn.cvbuilder.R
+import com.ktn.cvbuilder.ui.cvViewModel.CvViewModel
 import com.ktn.cvbuilder.ui.fragments.adapters.SectionsPagerAdapter
 import kotlinx.android.synthetic.main.fragment_holder.*
 
@@ -15,6 +16,7 @@ class HolderFragment constructor(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val viewModel = ViewModelProvider(requireActivity())[CvViewModel::class.java]
         view_pager.apply {
             adapter = sectionsPagerAdapter
         }
@@ -24,8 +26,24 @@ class HolderFragment constructor(
             }.attach()
         }
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            when(tabs.selectedTabPosition){
+                0 -> {
+                    viewModel.setAddItem("Add note","Note Title", "Note")
+                    AddDialog().show(requireActivity().supportFragmentManager,"")
+                }
+                1 ->{
+                    viewModel.setAddItem("Add Education/Certification","Note Title", "Note")
+                    AddDialog().show(requireActivity().supportFragmentManager,"")
+                }
+                2->{
+                    viewModel.setAddItem("Add Work","Work Title", "Work Position")
+                    AddDialog().show(requireActivity().supportFragmentManager,"")
+                }
+                3 ->{
+                    viewModel.setAddItem("Add Contact","Contact Type", "Contact Value")
+                    AddDialog().show(requireActivity().supportFragmentManager,"")
+                }
+            }
         }
     }
 

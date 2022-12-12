@@ -7,6 +7,7 @@ object LocalDataSource {
 
     val cvDto = CvDto(
         name = "Kyobe Daniel Lumu",
+        password = "",
         title = "Android Software Engineer",
         careerNote = R.string.career_note,
         experience = Experience(

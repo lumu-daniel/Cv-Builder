@@ -2,11 +2,16 @@ package com.ktn.cvbuilder.di
 
 import android.content.Context
 import androidx.fragment.app.FragmentActivity
+import androidx.room.Room
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
-import com.facebook.CallbackManager
 import com.ktn.cvbuilder.R
+import com.ktn.cvbuilder.data.local.LocalDataAccessApi
+import com.ktn.cvbuilder.data.local.room.CvDatabase
+import com.ktn.cvbuilder.data.local.room.daos.*
+import com.ktn.cvbuilder.domain.repositories.LocalDataAccessApiImpl
+import com.ktn.cvbuilder.orther.Constants.DATABASE_NAME
 import com.ktn.cvbuilder.ui.fragments.*
 import com.ktn.cvbuilder.ui.fragments.adapters.*
 import dagger.Module
@@ -14,6 +19,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.qualifiers.ActivityContext
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ActivityScoped
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
@@ -65,6 +71,62 @@ object ActivityModule {
         HolderFragment.FragmentInfo("Work", WorkFragment(workAdapter)),
         HolderFragment.FragmentInfo("Contacts", ContactFragment(contactsAdapter))
     ))
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+object AppModule{
+    @Singleton
+    @Provides
+    fun provideCvDatabaseItemDatabase(
+        @ApplicationContext context: Context
+    ) = Room.databaseBuilder(context,CvDatabase::class.java,DATABASE_NAME).build()
+
+    @Singleton
+    @Provides
+    fun provideUserDao(
+        database: CvDatabase
+    ) = database.userDao()
+
+    @Singleton
+    @Provides
+    fun provideContactDao(
+        database: CvDatabase
+    ) = database.contactDao()
+
+    @Singleton
+    @Provides
+    fun provideEducationDao(
+        database: CvDatabase
+    ) = database.educationDao()
+
+    @Singleton
+    @Provides
+    fun provideWorkDao(
+        database: CvDatabase
+    ) = database.workDao()
+
+    @Singleton
+    @Provides
+    fun provideCertificationDao(
+        database: CvDatabase
+    ) = database.certificationDao()
+
+    @Singleton
+    @Provides
+    fun provideLocalDataAccessRepository(
+        userDao: UserDao,
+        contactDao: ContactDao,
+        educationDao: EducationDao,
+        workDao: WorkDao,
+        certificationDao: CertificationDao
+    ) = LocalDataAccessApiImpl(
+        userDao,
+        workDao,
+        educationDao,
+        contactDao,
+        certificationDao
+    ) as LocalDataAccessApi
 
 }
 

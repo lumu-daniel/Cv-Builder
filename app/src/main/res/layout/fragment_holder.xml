@@ -40,6 +40,6 @@
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="@dimen/fab_margin"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/teal_200"
+            android:backgroundTint="@color/primary"
             app:srcCompat="@drawable/icn_add"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

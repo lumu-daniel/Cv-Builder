@@ -1,4 +1,4 @@
-package com.ktn.cvbuilder.ui.cvViewModel
+package com.ktn.cvbuilder.domain.states
 
 import com.facebook.FacebookException
 import com.facebook.login.LoginResult

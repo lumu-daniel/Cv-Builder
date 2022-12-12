@@ -4,6 +4,7 @@ import androidx.annotation.StringRes
 
 data class CvDto (
     val name:String,
+    val password:String,
     val title:String,
     @StringRes val careerNote:Int,
     val experience: Experience,
